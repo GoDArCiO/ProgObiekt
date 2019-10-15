@@ -1,0 +1,39 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+
+        int tab[][]= new int[3][3];
+        Scanner liczba = new Scanner(System.in);
+        
+        for (int i=0;i<3;i++)
+        	for (int j=0;j<3;j++) 
+        	{
+                System.out.println("Podaj liczbe");
+                int a = liczba.nextInt();
+                tab[i][j]=a;
+    }
+        for (int i=0;i<3;i++) {
+        	for (int j=0;j<3;j++) 
+        	{
+        		System.out.print(tab[i][j]+ "  ");
+        	}
+        System.out.println("");
+        }
+        System.out.println("podaj liczbe rozna od 1 i dodatnia");
+        int a = liczba.nextInt();
+        tab[1][1]=a;
+        for (int i=0;i<3;i++) {
+        	for (int j=0;j<3;j++) 
+        	{
+        		System.out.print(tab[i][j]+ "  ");
+        	}
+        System.out.println("");
+        }
+	}
+}
+    
