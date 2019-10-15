@@ -1,0 +1,27 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+
+
+        Scanner liczba = new Scanner(System.in);
+        
+        
+            System.out.println("Podaj liczbę a");
+            double a = liczba.nextInt();
+            System.out.println("Podaj liczbę b");
+            double b = liczba.nextInt();
+            System.out.println("Podaj liczbę c");
+            double c = liczba.nextInt();
+
+        double delta = b*b-4*a*c;
+        double pierw = Math.sqrt(delta);
+        
+        System.out.println((pierw-b)/2*a); 
+        System.out.println((-pierw-b)/2*a); 
+        
+    }
+    
+}
