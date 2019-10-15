@@ -19,8 +19,16 @@ public class pupcia {
         double delta = b*b-4*a*c;
         double pierw = Math.sqrt(delta);
         
+        if(delta>0) {
         System.out.println((pierw-b)/2*a); 
         System.out.println((-pierw-b)/2*a); 
+        }
+        if(delta==0) {
+        System.out.println((pierw-b)/2*a);  
+        }
+        if(delta<0) {
+        System.out.println("brak pierwiastkow");  
+        }
         
     }
     
