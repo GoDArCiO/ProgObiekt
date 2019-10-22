@@ -1,0 +1,25 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+
+
+        Scanner liczba = new Scanner(System.in);
+        
+        int a=0;
+        int b=1;
+
+        System.out.println("Podaj liczbę");
+        a = liczba.nextInt();
+
+while(a>1) {
+	b*=a;
+	a--;
+}
+
+System.out.println(b);
+    }
+    
+}
