@@ -1,0 +1,47 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+
+
+        Scanner liczba = new Scanner(System.in);
+        
+        
+
+            int tab[][]= {{1,2,3},{1,2,0},{1,0,2}};
+            int tab2[]= {5,5,5};
+            
+            
+            for (int i=0;i<3;i++) {
+            	for (int j=0;j<3;j++) 
+            	{
+            		System.out.print(tab[i][j]+ "  ");
+            	}
+            System.out.println("");
+    }
+            System.out.println("");
+            int j=0;
+            int i=0;
+            
+            while (i<3) {
+            	while (j<3) {
+            	tab[j][j]=tab2[j];
+            	i++;
+            	j++;
+            	}
+            }
+            	
+                for (i=0;i<3;i++) {
+                	for (j=0;j<3;j++) 
+                	{
+                		System.out.print(tab[i][j]+ "  ");
+                	}
+                System.out.println("");
+        }
+
+        
+    }
+    
+}
