@@ -1,0 +1,37 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+
+
+        Scanner liczba = new Scanner(System.in);
+        
+        int a=0;
+int max=0;
+            int tab[] = {0,0,0,0,0,0,0,0,0,0};
+            while(a<10) {
+            System.out.println("Podaj liczbę");
+tab[a] = liczba.nextInt();
+a++;}
+            int m=0;
+            a=0;
+            System.out.println(tab[0]);
+            while(a<9) {
+        		m=f1(tab[a+1],m);
+
+            	a++;
+            }
+    }
+    static int f1(int a,int max) {
+    	int m=max;
+    	if(m<a) {
+    		System.out.println(a);
+    		m=a;
+    	}
+    	return m;
+    }
+
+    
+}
