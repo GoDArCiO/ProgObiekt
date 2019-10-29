@@ -1,0 +1,27 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+
+        int a;
+        Scanner liczba = new Scanner(System.in);
+        System.out.println("Podaj liczbę");
+a = liczba.nextInt();
+f1(a);
+
+    }
+	
+    static void f1(int a) {
+int b=1;
+    	while(a>1) {
+    		b*=a;
+    		a--;
+    	}
+        System.out.println("silnia");
+    	System.out.println(b);
+
+    }
+    
+}
