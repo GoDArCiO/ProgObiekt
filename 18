@@ -1,0 +1,36 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+
+
+
+        
+        int n=3;
+        int tab[]= {0,0,0,0};
+
+f1(n,tab);
+
+    }
+	
+    static void f1(int n,int tab[] ) {
+        Scanner liczba = new Scanner(System.in);
+    	int a=0;
+    	int sum=0;
+    	while(a<n) {
+            System.out.println("Podaj liczbę");
+            tab[a] = liczba.nextInt();
+    		a++;
+    	}
+    	while(a>=0) {
+            sum+=tab[a];
+    		a--;
+    	}
+        System.out.println("suma");
+    	System.out.println(sum);
+
+    }
+    
+}
