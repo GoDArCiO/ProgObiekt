@@ -9,7 +9,7 @@ public class pupcia {
 
         
         int n=3;
-        int tab[]= {0,0,0,0};
+        int tab[]= {0,0,0};
 
 f1(n,tab);
 
@@ -24,7 +24,9 @@ f1(n,tab);
             tab[a] = liczba.nextInt();
     		a++;
     	}
+    	a--;
     	while(a>=0) {
+        	System.out.println(tab[a]);
             sum+=tab[a];
     		a--;
     	}
