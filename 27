@@ -1,0 +1,54 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+		maszynka maszynka1=new maszynka();
+		maszynka maszynka2=new maszynka();
+		maszynka maszynka3=new maszynka();
+maszynka1.wypelnij("Coca Cola",1);
+maszynka2.wypelnij("Pepsi",2);
+maszynka3.wypelnij("Sprite",3);
+Integer wybor=10;
+Integer reszta;
+Scanner skaner=new Scanner(System.in);
+while(wybor!=0) {
+System.out.println("mozesz kupic cole za 1 pepsi za 2 sprite za 3");
+System.out.println("1-cola 2-pepsi 3-sprite 0-wyjdz");
+wybor=skaner.nextInt();
+if(wybor==0)break;
+System.out.println("wybierz wartosc monety");
+Integer wybor2=skaner.nextInt();
+if(wybor==1) {
+	reszta=maszynka1.wrzuc(wybor2);
+}
+if(wybor==2) {
+	reszta=maszynka2.wrzuc(wybor2);
+}
+if(wybor==3) {
+	reszta=maszynka3.wrzuc(wybor2);
+}
+}
+	}
+}
+
+class maszynka{
+String nazwa;
+Integer cena;
+	public Integer wrzuc(int moneta) {
+		if(cena-moneta<0) {
+			System.out.println("kupiles");
+			Integer reszta=moneta-cena;
+			System.out.println("masz "+reszta+" reszty");
+			return reszta;
+		}else {
+			System.out.println("nie stac cie");
+			return moneta;
+		}
+	}
+		public void wypelnij(String nazwa1, Integer cena1) {
+			nazwa=nazwa;
+			cena=cena1;
+		}
+}
