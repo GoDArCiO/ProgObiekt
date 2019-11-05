@@ -1,0 +1,80 @@
+package eloelo;
+import java.util.Scanner;
+
+class osoba{
+public String imie;
+public String nazwisko;
+public Integer wiek;
+}
+
+class ksiazka{
+	public String tytul;
+	public String nazwiskoAutora;
+	public String dataWydania;
+}
+public class pupcia {
+
+	public static void main(String[] args) {
+		osoba osoba1=new osoba();
+		osoba osoba2=new osoba();
+		ksiazka ksiazka1=new ksiazka();
+		ksiazka ksiazka2=new ksiazka();
+		Scanner liczba = new Scanner(System.in);
+Scanner skaner=new Scanner(System.in);
+System.out.println("podaj imie");
+String imies=skaner.next();
+osoba1.imie=imies;
+skaner.close();    
+System.out.println("podaj nazwisko");
+String nazwiskos=skaner.next();
+osoba1.nazwisko=nazwiskos;
+skaner.close();  
+System.out.println("podaj wiek");
+Integer wieks=liczba.nextInt();
+osoba1.wiek=wieks;
+skaner.close();  
+
+System.out.println("podaj imie");
+imies=skaner.next();
+osoba2.imie=imies;
+skaner.close();    
+System.out.println("podaj nazwisko");
+nazwiskos=skaner.next();
+osoba2.nazwisko=nazwiskos;
+skaner.close();  
+System.out.println("podaj wiek");
+wieks=liczba.nextInt();
+osoba2.wiek=wieks;
+skaner.close();  
+
+System.out.println("podaj tytul");
+String tytuls=skaner.next();
+ksiazka1.tytul=tytuls;
+skaner.close();
+System.out.println("podaj nazwisko");
+nazwiskos=skaner.next();
+ksiazka1.nazwiskoAutora=nazwiskos;
+skaner.close();
+System.out.println("podaj date");
+String datas=skaner.next();
+ksiazka1.dataWydania=datas;
+skaner.close();
+
+System.out.println("podaj tytul");
+tytuls=skaner.next();
+ksiazka2.tytul=tytuls;
+skaner.close();
+System.out.println("podaj nazwisko");
+nazwiskos=skaner.next();
+ksiazka2.nazwiskoAutora=nazwiskos;
+skaner.close();
+System.out.println("podaj date");
+datas=skaner.next();
+ksiazka2.dataWydania=datas;
+skaner.close();
+	}
+
+
+        
+
+}
