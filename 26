@@ -1,0 +1,53 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+		data data1=new data();
+data1.wczytaj();
+data1.wypisz();
+data1.modyfikuj();
+data1.wypisz();
+
+	}
+}
+
+class data{
+Integer dzien;
+Integer miesiac;
+Integer rok;
+	public void wczytaj() {
+		
+		Scanner skaner2=new Scanner(System.in);
+		System.out.println("podaj rok");
+		Integer nowy=skaner2.nextInt();
+		rok=nowy;
+		System.out.println("podaj miesiac");
+		Integer nowy2=skaner2.nextInt();
+		miesiac=nowy2;
+		System.out.println("podaj dzien");
+		Integer nowy3=skaner2.nextInt();
+		dzien=nowy3;
+		skaner2.close();
+	}
+	public void modyfikuj() {
+		
+		Scanner skaner2=new Scanner(System.in);
+		System.out.println("podaj nowy rok");
+		Integer nowy=skaner2.nextInt();
+		rok=nowy;
+		System.out.println("podaj nowy miesiac");
+		Integer nowy2=skaner2.nextInt();
+		miesiac=nowy2;
+		System.out.println("podaj nowy dzien");
+		Integer nowy3=skaner2.nextInt();
+		dzien=nowy3;
+		skaner2.close();
+	}
+	public void wypisz() {
+		System.out.print(rok+"-");
+		System.out.print(miesiac+"-");
+		System.out.println(dzien);
+	}
+}
