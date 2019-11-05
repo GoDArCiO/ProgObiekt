@@ -1,0 +1,87 @@
+package eloelo;
+import java.util.Scanner;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+		osoba osoba1=new osoba();
+		osoba osoba2=new osoba();
+		ksiazka ksiazka1=new ksiazka();
+		ksiazka ksiazka2=new ksiazka();
+osoba1.wczytajImie();
+osoba1.wczytajNazwisko();
+osoba1.wczytajWiek();
+
+osoba2.wczytajImie();
+osoba2.wczytajWiek();
+osoba2.wczytajNazwisko();
+ksiazka1.wczytaj();
+ksiazka2.wczytaj();
+osoba1.wypisz();
+osoba2.wypisz();
+ksiazka1.wypisz();
+ksiazka2.wypisz();
+
+	}
+}
+class osoba{
+String imie;
+String nazwisko;
+Integer wiek;
+public String wczytajImie() {
+	Scanner skaner=new Scanner(System.in);
+	System.out.println("podaj imie");
+	String nowy=skaner.next();
+	imie=nowy;
+	skaner.close();
+	    return imie;
+}
+public String wczytajNazwisko() {
+	Scanner skaner=new Scanner(System.in);
+	System.out.println("podaj nazwisko");
+	String nowy=skaner.next();
+	nazwisko=nowy;
+	skaner.close();
+	return nazwisko;
+}
+	public Integer wczytajWiek() {
+		Scanner skaner=new Scanner(System.in);
+		System.out.println("podaj wiek");
+		Integer wieks=skaner.nextInt();
+		wiek=wieks;
+		skaner.close();
+		return wiek;
+}
+public void wypisz() {
+	System.out.println(imie);
+	System.out.println(nazwisko);
+	System.out.println(wiek);
+}
+}
+
+class ksiazka{
+String tytul;
+String nazwiskoAutora;
+String dataWydania;
+	public void wczytaj() {
+		
+		Scanner skaner2=new Scanner(System.in);
+		System.out.println("podaj tytul");
+		String tytuls=skaner2.next();
+		tytul=tytuls;
+
+		System.out.println("podaj nazwisko");
+		String nazwiskos=skaner2.next();
+		nazwiskoAutora=nazwiskos;
+
+		System.out.println("podaj date");
+		String datas=skaner2.next();
+		dataWydania=datas;
+		skaner2.close();
+	}
+	public void wypisz() {
+		System.out.println(tytul);
+		System.out.println(nazwiskoAutora);
+		System.out.println(dataWydania);
+	}
+}
