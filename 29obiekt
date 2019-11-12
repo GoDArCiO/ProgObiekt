@@ -1,0 +1,97 @@
+package eloelo;
+import java.util.*;
+
+public class pupcia {
+
+	public static void main(String[] args) {
+		Scanner liczba = new Scanner(System.in);
+		int a=2;
+		List<Object> object = new ArrayList<Object>();
+		// OK to add Strings:
+
+		object.add(new osoba("Maciek","Mruczkowski",18));
+		object.add(new osoba("Mariusz","Markowski",20));
+		((osoba) object.get(0)).wypisz();
+((osoba) object.get(1)).wypisz();
+
+System.out.println("1-Wyswietl osoby");
+System.out.println("2-Dodaj osobe");
+System.out.println("3-usun osobe");
+System.out.println("4-najmlodsza osoba");
+System.out.println("5-quit");
+int znak=0;
+int blokada=0;
+while(znak!=5) {
+	blokada=0;
+znak = liczba.nextInt();
+switch(znak) {
+case 1: for(int i=0;i!=a;i++) {((osoba) object.get(i)).wypisz();} break;
+case 2: 
+	int _wiek = liczba.nextInt();
+	String _imie = liczba.next();
+	String _nazwisko = liczba.next();
+	for(int i=0;i!=a;i++){
+		if(((osoba) object.get(i)).getNazwisko().equals(_nazwisko)) {
+			System.out.println("jest juz takie nazwisko");
+			blokada=1;}
+	}
+	if(blokada==0) {
+			a++;
+			object.add(new osoba(_imie,_nazwisko,_wiek));
+	}
+	break;
+case 3:
+	String nazwisko_ = liczba.next();
+	for(int i=0;i!=a;i++){
+		if(((osoba) object.get(i)).getNazwisko().equals(nazwisko_)) {
+			object.remove(i);
+			blokada=1;}
+	}
+	if(blokada==0) {
+		System.out.println("nie ma takiego nazwiska");
+	}
+	if(blokada==1) {
+		a--;
+	}
+	break;
+case 4:
+	int min=100;
+	int licznik=100;
+	for(int i=0;i!=a;i++){
+		licznik=((osoba) object.get(i)).getWiek();}
+if(licznik<min) {min=licznik;}
+for(int i=0;i!=a;i++){
+	if(min==((osoba) object.get(i)).getWiek()) {
+		((osoba) object.get(i)).wypisz();}
+	}
+	break;
+case 5:		System.out.println("kończę pracę");
+default: 		System.out.println("nieprawidłowy input");
+}
+}
+
+	}
+}
+
+class osoba{
+String imie;
+String nazwisko;
+Integer wiek;
+
+public osoba(String imie,String nazwisko, Integer wiek) {
+	this.imie = imie;
+	this.nazwisko = nazwisko;
+	this.wiek = wiek;
+}
+public Integer getWiek() {
+	return wiek;
+}
+public String getNazwisko() {
+	return nazwisko;
+}
+public void wypisz() {
+	System.out.print(imie +" | ");
+	System.out.print(nazwisko+ " | ");
+	System.out.println(wiek);
+}
+}
