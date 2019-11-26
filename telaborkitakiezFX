@@ -1,0 +1,66 @@
+package application;
+	
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.application.Application;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.geometry.*;
+
+public class Main extends Application {
+	Integer a=0;
+	List<Object> object = new ArrayList<Object>();
+	public void start(Stage primaryStage) {
+		try {
+			GridPane root = new GridPane();
+			root.setHgap(10);
+			root.setVgap(10);
+			Scene scene = new Scene(root,800,600);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			Label pyt1 = new Label("Imie:");
+			TextField odp1 = new TextField();
+			Label wynik=new Label();
+			Button p1=new Button("dalej");
+			Button p2=new Button("przyciskacz");
+			Button p3=new Button("klikacz");
+			Button p4=new Button("plaskacz");
+			Button p5=new Button("trombacz");
+			object.add(p2);
+			object.add(p3);
+			object.add(p4);
+			object.add(p5);
+			p1.setOnAction(e->{
+				if((odp1.getText() != null && !odp1.getText().isEmpty())) {
+					wynik.setText("ELO: "+odp1.getText());
+					//root.add(wynik,8,7,7,7);
+					a=Integer.parseInt(odp1.getText());
+					while (a>=0) {
+						root.add((Node) object.get(a),10,10-a*2,10-a*2,10-a*2);
+						a--;
+					}
+				}else {
+					wynik.setText("pustak!");
+					root.add(wynik,8,7,7,7);
+				}
+			});
+			root.add(pyt1,2,2,4,1);
+			root.add(odp1,3,3,4,1);
+			root.add(p1,3,4,4,1);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
