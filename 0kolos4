@@ -1,0 +1,14 @@
+package naKoloska1;
+
+public class pracownik extends osoba {
+	//alt+shift+s to generate
+	Integer pensja;
+
+	public Integer getPensja() {
+		return pensja;
+	}
+
+	public void setPensja(Integer pensja) {
+		this.pensja = pensja;
+	}
+}
