@@ -1,0 +1,97 @@
+package naKoloska1;
+
+import java.util.Scanner;
+
+public class Kol2 {
+	public static void main(String[] args) {
+	Scanner liczba = new Scanner(System.in);
+	Scanner tekst = new Scanner(System.in);
+pracownik[] zbiorPracownikow=new pracownik[10];
+for(int i=0;i<10;i++) {
+	zbiorPracownikow[i]=new pracownik();
+}
+String imie,szukaneImie;
+int znak=0,pensja,min=0,helper;
+int noPracowniks=0;
+while(znak!=6) {
+System.out.println("1-Wyswietl osoby");
+System.out.println("2-Dodaj osobe");
+System.out.println("3-usun osobe");
+System.out.println("4-najtansza osoba");
+System.out.println("5-edytuj osobe");
+System.out.println("6-quit");
+znak = liczba.nextInt();
+switch(znak) {
+case 1: //wypisuje os
+System.out.println("pensja | imie");
+	for(int i=0;i<noPracowniks;i++) {
+	System.out.println("     " + zbiorPracownikow[i].getPensja()+" | "+zbiorPracownikow[i].getImie());
+}
+break;
+case 2: //tworzy nowy obiekt i go setuje
+	System.out.println("podaj pensje");
+	pensja=liczba.nextInt();
+	zbiorPracownikow[noPracowniks].setPensja(pensja);
+	System.out.println("podaj imie");
+	imie=tekst.next();
+	zbiorPracownikow[noPracowniks].setImie(imie);
+	noPracowniks++;
+break;
+case 3://usuwa os i dosuwa stare do poczatku
+	helper=0;
+	System.out.println("podaj imie os");
+	szukaneImie=tekst.next();
+	for(int i=0;i<noPracowniks;i++) {
+		if(szukaneImie.equals(zbiorPracownikow[i].getImie())) {
+			helper=1;
+if(i==noPracowniks) {
+	noPracowniks--;
+}
+if(i!=noPracowniks) {
+	zbiorPracownikow[i].setImie(zbiorPracownikow[noPracowniks-1].getImie());
+	zbiorPracownikow[i].setPensja(zbiorPracownikow[noPracowniks-1].getPensja());
+	noPracowniks--;
+}
+		}
+	}
+	if(helper==0){
+		System.out.println("nie znaleziono osoby o podanym imieniu");
+	}
+break;
+case 4://znajduje najtansza os
+	min=zbiorPracownikow[0].getPensja();
+	helper=0;
+	for(int i=0;i<noPracowniks;i++) {
+		if(zbiorPracownikow[i].getPensja()<min)
+	min=zbiorPracownikow[i].getPensja();
+		helper=i;
+}
+System.out.println("     " + zbiorPracownikow[helper].getPensja()+" | "+zbiorPracownikow[helper].getImie());
+break;
+case 5://edytuje os
+	helper=0;
+	System.out.println("podaj imie os");
+	szukaneImie=tekst.next();
+	for(int i=0;i<noPracowniks;i++) {
+		if(szukaneImie.equals(zbiorPracownikow[i].getImie())) {
+			helper=1;
+			System.out.println("podaj pensje");
+			pensja=liczba.nextInt();
+			zbiorPracownikow[i].setPensja(pensja);
+			System.out.println("podaj imie");
+			imie=tekst.next();
+			zbiorPracownikow[i].setImie(imie);
+		}
+	}
+	if(helper==0){
+		System.out.println("nie znaleziono osoby o podanym imieniu");
+	}
+break;
+case 6:		System.out.println("koncze prace");
+break;
+default: 		System.out.println("nieprawidlowy input");
+}
+}
+}
+}
+
