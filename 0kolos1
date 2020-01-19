@@ -1,0 +1,102 @@
+package naKoloska1;
+import java.util.Scanner;
+public class Kol {
+	
+    static Scanner liczba = new Scanner(System.in);//deklaracja skanera
+    
+	static int[][] inicjalizujTablice(int w,int s) {
+        int[][] tab= new int[w][s];
+        for (int i=0;i<w;i++) {
+        	for (int j=0;j<s;j++) 
+        	{
+        		tab[i][j]=0;
+        	}
+        }
+        return tab;
+	}
+	
+	static void wprowadzNextWartosc(int tab[][],int w,int s) {
+		int helper=0;
+		int helperw=0;
+		int helpers=0;
+        for (int i=0;i<w;i++) {
+        	for (int j=0;j<s;j++) 
+        	{
+        		if (tab[i][j]!=0) {//jak nie trafiles na zero
+        		System.out.print(tab[i][j]+ "  ");//drukuj tablice
+        		}
+        		if (tab[i][j]==0) {
+        			if(helper==1){
+        				System.out.print(tab[i][j]+ "  ");//jak nie to drukuj dalej
+        			}
+        			if(helper==0) {//jak to pierwsze zero
+        				System.out.print("?"+ "  ");//drukuj ? i zapamietaj kordy
+        				helperw=i;
+        				helpers=j;
+        				helper=1;//zablokuj flage
+        			}
+        		}
+        	}
+        System.out.println("");
+        }
+        
+		int d = liczba.nextInt();
+		tab[helperw][helpers]=d;
+		
+        for (int i=0;i<w;i++) {
+        	for (int j=0;j<s;j++) 
+        	{
+        		System.out.print(tab[i][j]+ "  ");
+        	}
+        System.out.println("");
+        }
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+        int tab[][]= {{1,2,3},{1,2,0}};//deklaracja tablicy
+
+        
+        int c=0,s=3,w=2;
+        
+        //printowanie tablicy o szerokosci s i wysokosci w
+        for (int i=0;i<w;i++) {
+        	for (int j=0;j<s;j++) 
+        	{
+        		System.out.print(tab[i][j]+ "  ");
+        	}
+        System.out.println("");
+        }
+        //koniec printowania tablicy
+        
+        int[][] tab2= inicjalizujTablice(3,3);
+
+        wprowadzNextWartosc(tab2,3,3);
+        wprowadzNextWartosc(tab2,3,3);
+        wprowadzNextWartosc(tab2,3,3);
+        wprowadzNextWartosc(tab2,3,3);
+        
+/*
+        	for (int j=0;j<3;j++) 
+        	{
+        		c=c+tab[0][j];
+        	}
+        System.out.println(c);
+        c=0;
+    	for (int j=0;j<3;j++) 
+    	{
+    		c=c+tab[j][0];
+    	}
+    	System.out.println(c);
+    	c=0;
+    	int j=0;
+    	for (int i=0;i<3;i++) {
+
+    		c=c+tab[i][j];
+    	j++;
+    	}
+    	System.out.println(c);
+    	*/
+	}
+	
+}
